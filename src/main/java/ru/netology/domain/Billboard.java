@@ -4,7 +4,7 @@ import ru.netology.domain.Films;
 
 public class Billboard {
     private Films[] films = new Films[0];
-    private int findLast = 10;
+    private int findLast = 5;
 
     public Billboard() {
     }
