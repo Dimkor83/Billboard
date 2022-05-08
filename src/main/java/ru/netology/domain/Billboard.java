@@ -23,6 +23,10 @@ public class Billboard {
     }
 
     public Films[] findAll() {
+        return films;
+    }
+
+    public Films[] findLast() {
         int resultLength;
         if (films.length < findLast) {
             resultLength = films.length;
@@ -30,23 +34,10 @@ public class Billboard {
             resultLength = findLast;
         }
         Films[] result = new Films[resultLength];
-        for (int i = 0; i < result.length; i++) {
+        for (int i = result.length - 1; i >= 0; i--) {
             int index = films.length - i - 1;
             result[i] = films[index];
         }
         return result;
-    }
-
-    public void removeById(int id) {
-        int length = films.length - 1;
-        Films[] tmp = new Films[length];
-        int index = 0;
-        for (Films item : films) {
-            if (item.getId() != id) {
-                tmp[index] = item;
-                index++;
-            }
-        }
-        films = tmp;
     }
 }
